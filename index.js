@@ -100,6 +100,12 @@ function endGame() {
 }
 
 
+for (var i = 0; i < ROCKS.length; i++) {
+  $('#myDiv').remove();
+}
+
+
+
 function moveDodger(e) {
   /**
    * Calls `moveDodgerLeft()` if LEFT_ARROW pressed.
