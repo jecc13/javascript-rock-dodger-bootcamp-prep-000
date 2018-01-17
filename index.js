@@ -28,21 +28,17 @@ function checkCollision(rock) {
   // GAME_HEIGHT - 20 - 20 = 360px;
   // top refers to top of the rock.
 
-  // so if the "if" directly below evaluates to TRUE, then
 
-/*
-  if (top > (GAME_HEIGHT - ROCK_HEIGHT - DODGER_HEIGHT) {
+  if (top > (GAME_HEIGHT - ROCK_HEIGHT - DODGER_HEIGHT)) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left);
     const dodgerRightEdge = dodgerLeftEdge + DODGER_WIDTH;
     const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
-    if (false)  {
+    if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
     }
   }
-*/
-return false;
-}
+} // end fx checkCollision
 
               /**
                * Think about it -- what's happening here?
