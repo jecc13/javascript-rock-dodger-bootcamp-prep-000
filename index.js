@@ -94,7 +94,13 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
-  document.querySelectorAll(".rocks").remove();
+
+var oldRocks = document.getElementById("foo");
+while(myNode.hasChildNodes())
+{
+   myNode.removeChild(myNode.lastChild);
+}
+
   window.removeEventListener('keydown', moveDodger);
     alert('YOU LOSE!');
 }
