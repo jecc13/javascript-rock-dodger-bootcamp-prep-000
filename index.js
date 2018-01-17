@@ -40,6 +40,7 @@ function checkCollision(rock) {
 
   // end if (top of rock below top dodger )
   } else { return true; }
+  // temp for debugging
 
   
 } // end fx checkCollision
