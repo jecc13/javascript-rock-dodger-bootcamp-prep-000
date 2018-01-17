@@ -98,21 +98,18 @@ function endGame() {
 var oldRocks = document.getElementByClassName("rocks");
 while(oldRocks.lastChild())
 {
-   oldRocks.removeChild(myNode.lastChild);
+   oldRocks.remove(myNode.lastChild);
 }
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
 }
 
 /*
-for (var i = 0; i < ROCKS.length; i++) {
-  $('#myDiv').remove();
-}
 
-var myNode = document.getElementById("foo");
-while(myNode.hasChildNodes())
+var oldRocks = document.getElementByClassName("rocks");
+while(oldRocks.lastChild())
 {
-   myNode.removeChild(myNode.lastChild);
+   oldRocks.removeChild(myNode.lastChild);
 }
 
 */
