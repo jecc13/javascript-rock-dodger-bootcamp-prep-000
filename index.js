@@ -99,10 +99,18 @@ function endGame() {
     alert('YOU LOSE!');
 }
 
-
+/*
 for (var i = 0; i < ROCKS.length; i++) {
   $('#myDiv').remove();
 }
+
+var myNode = document.getElementById("foo");
+while(myNode.hasChildNodes())
+{
+   myNode.removeChild(myNode.lastChild);
+}
+
+*/
 
 
 
