@@ -95,7 +95,7 @@ function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
 
-var oldRocks = document.getElementById("foo");
+var oldRocks = document.getElementByclassName("rocks");
 while(myNode.hasChildNodes())
 {
    myNode.removeChild(myNode.lastChild);
