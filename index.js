@@ -33,12 +33,17 @@ function checkCollision(rock) {
     const dodgerRightEdge = dodgerLeftEdge + DODGER_WIDTH;
     const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
+ 
+ /*
     if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
     } else {
       return false;
-    }
-  }
+    } // end else
+  */   
+    
+  } // end if (top of rock below top dodger )
+  
 } // end fx checkCollision
 
               /**
