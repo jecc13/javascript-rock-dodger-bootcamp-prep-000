@@ -94,7 +94,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
-  $('.rocks').remove();
+  $(".rocks").remove();
 
 //  for (var i = 0; i < ROCKS.length; i++) {
 //    $('#myDiv').remove();
