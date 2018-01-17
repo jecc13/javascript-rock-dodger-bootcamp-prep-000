@@ -35,6 +35,8 @@ function checkCollision(rock) {
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
     if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
+    } else {
+      return false;
     }
   }
 } // end fx checkCollision
