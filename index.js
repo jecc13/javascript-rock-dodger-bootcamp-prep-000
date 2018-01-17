@@ -95,10 +95,6 @@ function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
   $(".rocks").remove();
-
-//  for (var i = 0; i < ROCKS.length; i++) {
-//    $('#myDiv').remove();
-//  }
   window.removeEventListener('keydown', moveDodger);
     alert('YOU LOSE!');
 }
