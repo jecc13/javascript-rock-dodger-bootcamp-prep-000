@@ -95,14 +95,13 @@ function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
 
-var oldRocks = document.getElementByclassName("rocks");
-while(myNode.hasChildNodes())
+var oldRocks = document.getElementByClassName("rocks");
+while(oldRocks.lastChild())
 {
-   myNode.removeChild(myNode.lastChild);
+   oldRocks.removeChild(myNode.lastChild);
 }
-
   window.removeEventListener('keydown', moveDodger);
-    alert('YOU LOSE!');
+  alert('YOU LOSE!');
 }
 
 /*
