@@ -34,17 +34,27 @@ function checkCollision(rock) {
     const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
  
- /*
+ return false;  // temp debugging the createRock fx.
+ 
+// put the big if here  
+    
+  } // end if (top of rock below top dodger )
+  
+} // end fx checkCollision
+
+
+
+/*
     if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
     } else {
       return false;
     } // end else
-  */   
-    
-  } // end if (top of rock below top dodger )
-  
-} // end fx checkCollision
+
+*/ 
+
+
+
 
               /**
                * Think about it -- what's happening here?
