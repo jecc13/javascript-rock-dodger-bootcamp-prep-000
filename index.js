@@ -43,7 +43,6 @@ function checkCollision(rock) {
 } // end fx checkCollision
 
 
-
 /*
     if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
