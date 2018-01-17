@@ -95,10 +95,9 @@ function endGame() {
   clearInterval(gameInterval);
 //  ROCKS.length = 0;
 
-var oldRocks = document.getElementByClassName("rocks");
-while(oldRocks.lastChild())
+while(ROCKS.lastChild())
 {
-   oldRocks.remove(myNode.lastChild);
+   ROCKS.remove(ROCKS.lastChild);
 }
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
