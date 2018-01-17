@@ -35,10 +35,12 @@ function checkCollision(rock) {
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
  
  return false;  // temp debugging the createRock fx.
- 
+
 // put the big if here  
-    
-  } // end if (top of rock below top dodger )
+
+  // end if (top of rock below top dodger )
+  } else { return true; }
+
   
 } // end fx checkCollision
 
