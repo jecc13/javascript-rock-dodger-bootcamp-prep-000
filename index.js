@@ -105,11 +105,7 @@ function endGame() {
 
 ROCKS.length = 0;
 
-var oldRocks = document.querySelectorAll(".rocks");
-while(oldRocks.lastChild())
-{
-   oldRocks.removeChild(oldRocks.lastChild);
-}
+
 
 }
 
@@ -118,16 +114,16 @@ Trying to figure out WTF the test wants to clear the ROCKS.
 
 
   var stupidRocks = document.querySelectorAll(".rock");
-  while (stupidRocks.length > 0) {
-    rock = stupidRocks.lastChild;
-    rock.remove();
+  for (var i = 0; i < stupidRocks.length; i++) {
+    stupidRocks[i].remove();
   }
 
 var oldRocks = document.querySelectorAll(".rocks");
 while(oldRocks.lastChild())
 {
-   oldRocks.removeChild(OldRocks.lastChild);
+   oldRocks.removeChild(oldRocks.lastChild);
 }
+
 */
 
 
