@@ -106,6 +106,7 @@ while(oldRocks.lastChild())
 {
    oldRocks.removeChild(OldRocks.lastChild);
 }
+
   ROCKS.length = 0;
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
