@@ -102,7 +102,11 @@ function endGame() {
   clearInterval(gameInterval);
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
-
+  var stupidRocks = document.querySelectorAll(".rock");
+  for (var i = 0; i < stupidRocks.length; i++) {
+    stupidRocks[i].remove();
+  }
+  
 ROCKS.length = 0;
 
 
