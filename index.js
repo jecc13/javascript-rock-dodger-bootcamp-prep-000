@@ -100,7 +100,13 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-  ROCKS.length = 0;
+  
+  var stupidRocks = document.querySelectorAll(".rock");
+  while (stupidRocks.length > 0) {
+    rock = stupidRocks.lastChild;
+    rock.remove();
+  }
+  
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
 }
