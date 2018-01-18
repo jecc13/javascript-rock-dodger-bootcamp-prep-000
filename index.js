@@ -19,7 +19,7 @@ var gameInterval = null;
 const DODGER_WIDTH = 40;
 const DODGER_HEIGHT = 20;
 const ROCK_WIDTH = 40;
-const ROCK_HEIGHT = 40;
+const ROCK_HEIGHT = 20;
 
 function checkCollision(rock) {
   const top = positionToInteger(rock.style.top);
