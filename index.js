@@ -86,6 +86,7 @@ function createRock(x) {
     }
     if (checkCollision(rock)) {
       endGame();
+      return;
     }
     if (top < 400) {
       window.requestAnimationFrame(step);
