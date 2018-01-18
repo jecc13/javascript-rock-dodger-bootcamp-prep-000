@@ -21,6 +21,8 @@ function moveRock() {
 */
 
 /*
+create and drop a rock.
+
 const jen = document.createElement('div');
 jen.className = 'rock';
 jen.style.left = `${x}px`;
