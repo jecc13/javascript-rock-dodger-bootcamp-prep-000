@@ -23,8 +23,6 @@ The console.logs below are for double checking the collision checking.
     } // end else
 */
 
-
-
 /* 
 this works to move the rocks, without checking for collisions
 
