@@ -109,8 +109,6 @@ function endGame() {
   
 ROCKS.length = 0;
 
-
-
 }
 
 /*
