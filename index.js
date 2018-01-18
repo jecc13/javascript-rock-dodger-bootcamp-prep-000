@@ -107,7 +107,7 @@ function endGame() {
 
 /*
 Trying to figure out WTF the test wants to clear the ROCKS. 
-ROCKS.length = 0 works to clear the elements, but fails the test. 
+
 
   var stupidRocks = document.querySelectorAll(".rock");
   while (stupidRocks.length > 0) {
