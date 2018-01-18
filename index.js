@@ -155,7 +155,7 @@ function positionToInteger(p) {
 function start() {
   window.addEventListener('keydown', moveDodger);
 
-DODGER.style.backgroundColor = 'yellow';
+
 
   START.style.display = 'none';
 
