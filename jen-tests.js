@@ -1,7 +1,14 @@
 
 // Simpler code needed to get stuff working before building up to the complex crap.
 
-/* this works to move the rocks, without checking for collisions
+/* 
+add to the start function, so i have a visual that start() has actually started. 
+
+DODGER.style.backgroundColor = 'yellow';
+*/
+
+/* 
+this works to move the rocks, without checking for collisions
 
 function moveRock() {
     function step() {
