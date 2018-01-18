@@ -115,10 +115,10 @@ ROCKS.length = 0 works to clear the elements, but fails the test.
     rock.remove();
   }
 
-var oldRocks = document.getElementByClassName("rocks");
+var oldRocks = document.querySelectorAll(".rocks");
 while(oldRocks.lastChild())
 {
-   oldRocks.removeChild(myNode.lastChild);
+   oldRocks.removeChild(OldRocks.lastChild);
 }
 */
 
