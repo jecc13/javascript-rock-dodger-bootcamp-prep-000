@@ -100,34 +100,14 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
+  var stupidRocks = document.querySelectorAll(".rock");
+  for (var i = 0; i < stupidRocks.length; i++) {
+    stupidRocks[i].remove();
+  }
+  ROCKS.length = 0;  
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
-  var stupidRocks = document.querySelectorAll(".rock");
-  for (var i = 0; i < stupidRocks.length; i++) {
-    stupidRocks[i].remove();
-  }
-  
-ROCKS.length = 0;
-
 }
-
-/*
-Trying to figure out WTF the test wants to clear the ROCKS. 
-
-
-  var stupidRocks = document.querySelectorAll(".rock");
-  for (var i = 0; i < stupidRocks.length; i++) {
-    stupidRocks[i].remove();
-  }
-
-var oldRocks = document.querySelectorAll(".rocks");
-while(oldRocks.lastChild())
-{
-   oldRocks.removeChild(oldRocks.lastChild);
-}
-
-*/
-
 
 /**
  * Calls `moveDodgerLeft()` if LEFT_ARROW pressed.
