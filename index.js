@@ -34,8 +34,13 @@ function checkCollision(rock) {
     const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
  
-    if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)] || [(rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge)]) {
-      return true;
+    if (((rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)) || 
+      ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge))) {
+        console.log(`DL: ${dodgerLeftEdge}`);
+        console.log(`DR: ${dodgerRightEdge}`);
+        console.log(`RL: ${rockLeftEdge}`);
+        console.log(`RR: ${rockRightEdge}`);
+       return true;
     } else {
       return false;
     } // end else
@@ -43,25 +48,13 @@ function checkCollision(rock) {
   // end if (top of rock below top dodger )
   }
   
-  
 } // end fx checkCollision
 
 
 /*
-parking lot
+parking lot - case 2 from instructions is redundant
+ || ((rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge))
 */ 
-              /**
-               * CASE 2 is redundant
-               * 
-               * Think about it -- what's happening here?
-               * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
-               */
 
 
 /**
@@ -80,26 +73,23 @@ function createRock(x) {
   function moveRock() {
     function step() {
       rock.style.top = `${top += 2}px`;
-      if (top < GAME_HEIGHT) {
+      if (checkCollision(rock)) {
+        endGame();
+      } else if (top < GAME_HEIGHT) {
         window.requestAnimationFrame(step);
+      } else {
+        GAME.removeChild(rock);
       }
-    }
-    if (checkCollision(rock)) {
-      endGame();
-      return;
-    }
-    if (top < 400) {
-      window.requestAnimationFrame(step);
-    } else {
-      GAME.removeChild(rock);
-    } 
+    } // end step()
+
+    window.requestAnimationFrame(step);    
+
   } // end moveRock()
 
   moveRock(rock);
   ROCKS.push(rock);
   return rock;
 }  // end createRock(x) 
-
 
 
 /**
@@ -110,7 +100,7 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-// ROCKS.length = 0;
+  ROCKS.length = 0;
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
 }
@@ -178,9 +168,11 @@ function positionToInteger(p) {
 
 function start() {
   window.addEventListener('keydown', moveDodger);
+
 DODGER.style.backgroundColor = 'yellow';
 
   START.style.display = 'none';
+
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)));
   }, 1000);
