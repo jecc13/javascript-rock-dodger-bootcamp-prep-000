@@ -1,5 +1,7 @@
 /*
 
+`learn test` doesn't accurately test checkCollision(rock) for the case of the rock centered over the dodger.
+
 To improve your test, I suggest changing your "180px" test case in the checkCollision(rock) function.
 
 If the student's program fails to check for case 2 in the instructions ((rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge)), dropping a rock with a left edge of between 181 and 199, inclusive, will pass the tests and the rock will pass right through the dodger in the game. 
