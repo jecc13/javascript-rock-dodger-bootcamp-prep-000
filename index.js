@@ -101,12 +101,12 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
   
-  var stupidRocks = document.querySelectorAll(".rock");
-  while (stupidRocks.length > 0) {
-    rock = stupidRocks.lastChild;
-    rock.remove();
-  }
-  
+  var oldRocks = document.querySelectorAll(".rocks");
+while(oldRocks.lastChild())
+{
+   oldRocks.removeChild(OldRocks.lastChild);
+}
+  ROCKS.length = 0;
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
 }
