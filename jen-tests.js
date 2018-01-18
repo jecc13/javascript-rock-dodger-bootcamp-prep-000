@@ -7,6 +7,27 @@ add to the start function, so i have a visual that start() has actually started.
 DODGER.style.backgroundColor = 'yellow';
 */
 
+/*
+
+
+
+
+    if (((rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)) || 
+      ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge))) {
+        console.log(`DL: ${dodgerLeftEdge}`);
+        console.log(`DR: ${dodgerRightEdge}`);
+        console.log(`RL: ${rockLeftEdge}`);
+        console.log(`RR: ${rockRightEdge}`);
+       return true;
+    } else {
+      return false;
+    } // end else
+
+
+*/
+
+
+
 /* 
 this works to move the rocks, without checking for collisions
 
