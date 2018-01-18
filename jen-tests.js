@@ -8,9 +8,7 @@ DODGER.style.backgroundColor = 'yellow';
 */
 
 /*
-
-
-
+The console.logs below are for double checking the collision checking.
 
     if (((rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)) || 
       ((rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge))) {
@@ -22,8 +20,6 @@ DODGER.style.backgroundColor = 'yellow';
     } else {
       return false;
     } // end else
-
-
 */
 
 
