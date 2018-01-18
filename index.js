@@ -100,16 +100,17 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-  
+  window.removeEventListener('keydown', moveDodger);
+  alert('YOU LOSE!');
+
+ROCKS.length = 0;
+
 var oldRocks = document.querySelectorAll(".rocks");
 while(oldRocks.lastChild())
 {
-   oldRocks.removeChild(OldRocks.lastChild);
+   oldRocks.removeChild(oldRocks.lastChild);
 }
 
-  ROCKS.length = 0;
-  window.removeEventListener('keydown', moveDodger);
-  alert('YOU LOSE!');
 }
 
 /*
