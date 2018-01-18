@@ -18,7 +18,7 @@ var gameInterval = null;
  */
 const DODGER_WIDTH = 40;
 const DODGER_HEIGHT = 20;
-const ROCK_WIDTH = 20; // I tested with 40. maybe case 2 is NOT redundant.
+const ROCK_WIDTH = 40; // I tested with 40. maybe case 2 is NOT redundant.
 const ROCK_HEIGHT = 20;
 
 function checkCollision(rock) {
