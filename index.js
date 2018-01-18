@@ -43,13 +43,6 @@ function checkCollision(rock) {
   
 } // end fx checkCollision
 
-
-/*
-parking lot - case 2 from instructions is redundant
- || ((rockLeftEdge >= dodgerLeftEdge) && (rockRightEdge <= dodgerRightEdge))
-*/ 
-
-
 /**
 Creates a rock with a random left position.
 Called initially from the START function.
