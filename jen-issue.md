@@ -1,3 +1,4 @@
+`learn test` doesn't accurately test checkCollision(rock) for the case of the rock centered over the dodger.
 
 
 To improve your test, I suggest changing your "180px" test case in the checkCollision(rock) function.
