@@ -1,5 +1,7 @@
 /**
  * Don't change these constants!
+ * 
+ * THIS VERSION LETS YOU MANUALLY CREATE ROCKS FOR TESTING THE COLLISIONS.
  */
 const DODGER = document.getElementById('dodger');
 const GAME = document.getElementById('game');
