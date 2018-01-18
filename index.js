@@ -41,7 +41,7 @@ function checkCollision(rock) {
       return false;
     } // end else
 
-  // end if (top of rock below top dodger )
+  // end if (top of rock below top of dodger )
   }
   
 } // end fx checkCollision
