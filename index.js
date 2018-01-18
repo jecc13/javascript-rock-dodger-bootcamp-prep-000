@@ -34,30 +34,22 @@ function checkCollision(rock) {
     const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + ROCK_WIDTH;
  
- return false;  // temp debugging the createRock fx.
-
-// put the big if here  
-
-  // end if (top of rock below top dodger )
-  } else { return true; }
-  // temp for debugging
-
-  
-} // end fx checkCollision
-
-
-/*
     if ([(rockLeftEdge <= dodgerRightEdge) && (rockRightEdge >= dodgerRightEdge)] || [(rockLeftEdge <= dodgerLeftEdge) && (rockRightEdge >= dodgerLeftEdge)]) {
       return true;
     } else {
       return false;
     } // end else
 
+  // end if (top of rock below top dodger )
+  }
+  
+  
+} // end fx checkCollision
+
+
+/*
+parking lot
 */ 
-
-
-
-
               /**
                * CASE 2 is redundant
                * 
@@ -71,35 +63,43 @@ function checkCollision(rock) {
                *    and the rock's right edge is > the DODGER's right edge
                */
 
-/*
+
+/**
 Creates a rock with a random left position.
 Called initially from the START function.
 */
 function createRock(x) {
+
   const rock = document.createElement('div');
   rock.className = 'rock';
   rock.style.left = `${x}px`;
   var top = 0;
   rock.style.top = top;
-
   GAME.appendChild(rock);
 
   function moveRock() {
-      if (checkCollision(rock)) {
-        endGame();
-      } else if (rock.style.top > 0) {
-          rock.style.top = `${top + 2}px`;
-          if (top < GAME_HEIGHT) {
-            window.requestAnimationFrame(moveRock);
-          }
-      } else {
-          rock.remove();
+    function step() {
+      rock.style.top = `${top += 2}px`;
+      if (top < GAME_HEIGHT) {
+        window.requestAnimationFrame(step);
       }
-  }
-  window.requestAnimationFrame(moveRock);
+    }
+    if (checkCollision(rock)) {
+      endGame;
+    }
+    if (top < 400) {
+      window.requestAnimationFrame(step);
+    } else {
+      GAME.removeChild(rock);
+    } 
+  } // end moveRock()
+
+  moveRock(rock);
   ROCKS.push(rock);
   return rock;
-}
+}  // end createRock(x) 
+
+
 
 /**
  * End the game by clearing `gameInterval`,
@@ -110,33 +110,33 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
 // ROCKS.length = 0;
+  window.removeEventListener('keydown', moveDodger);
+  alert('YOU LOSE!');
+}
+
+/*
+Trying to figure out WTF the test wants to clear the ROCKS. 
+ROCKS.length = 0 works to clear the elements, but fails the test. 
+
   var rock;
   while (ROCKS.length > 0) {
     rock = ROCKS.lastChild;
     rock.remove();
   }
 
-  window.removeEventListener('keydown', moveDodger);
-  alert('YOU LOSE!');
-}
-
-/*
-
 var oldRocks = document.getElementByClassName("rocks");
 while(oldRocks.lastChild())
 {
    oldRocks.removeChild(myNode.lastChild);
 }
-
 */
 
 
-
+/**
+ * Calls `moveDodgerLeft()` if LEFT_ARROW pressed.
+ * Calls `moveDodgerRight()` if RIGHT_ARROW pressed.
+*/
 function moveDodger(e) {
-  /**
-   * Calls `moveDodgerLeft()` if LEFT_ARROW pressed.
-   * Calls `moveDodgerRight()` if RIGHT_ARROW pressed.
-  */
   if ( e.which === LEFT_ARROW ) {
       e.preventDefault();
       e.stopPropagation();
@@ -186,5 +186,43 @@ DODGER.style.backgroundColor = 'yellow';
 }
 //end end 
 
+// Simpler code needed to get stuff working before building up to the complex crap.
 
+/* this works to move the rocks, without checking for collisions
+
+function moveRock() {
+    function step() {
+      rock.style.top = `${top += 2}px`;
+      if (top < GAME_HEIGHT) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
+*/
+
+/*
+const jen = document.createElement('div');
+jen.className = 'rock';
+jen.style.left = `${x}px`;
+//jen.style.left = '4px';
+jen.style.top = '2px';
+GAME.appendChild(jen);
+
+function move(jen) {
+  var top = 0;
+ 
+  function step() {
+    jen.style.top = `${top += 2}px`;
+ 
+    if (top < 400) {
+      window.requestAnimationFrame(step);
+    }
+  }
+  window.requestAnimationFrame(step);
+} // end move(jen)
+
+move(jen);
+ROCKS.push(jen);
+return jen;
+*/
 
