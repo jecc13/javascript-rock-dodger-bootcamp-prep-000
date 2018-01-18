@@ -101,7 +101,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
   
-  var oldRocks = document.querySelectorAll(".rocks");
+var oldRocks = document.querySelectorAll(".rocks");
 while(oldRocks.lastChild())
 {
    oldRocks.removeChild(OldRocks.lastChild);
